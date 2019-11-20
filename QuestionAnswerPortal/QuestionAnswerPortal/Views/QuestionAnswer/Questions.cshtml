@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Questions";
+}
+
+<div class="row heading-row">
+    <div class="col-md-3 col-lg-3 col-sm-3">
+        <h2>Questions</h2>
+    </div>
+    @*===ask question button===*@
+    <div class="right col-md-9 col-lg-9 col-sm-9">
+        <button class="btn btn-default custom-btn" data-toggle="modal" data-target="#QuestionModal">Ask Question</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <div id="questions-container" class="card 3d-card">
+            @*====questions are bind here====*@
+        </div>
+    </div>
+</div>
+
+
+<!-- modal for question submission -->
+<div class="modal fade" id="QuestionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ask Question</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="question-id" class="form-control" placeholder="Enter your question here" />
+                <div class="text-danger" id="question-error">Please enter question!</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="question-submit" type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal to show answers of a question and to submit answer-->
+<div class="modal fade" id="AnswerModal" tabindex="-1" role="dialog" aria-labelledby="answerModelLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="answerModelLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="answer-container" class="card 3d-card">
+                    @*====answers are bind here====*@
+                </div>
+                <hr />
+                <div class="form-group row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <label>Your Answer here!</label>
+                        <input id="answer-id" type="text" class="form-control" placeholder="Enter your answer" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                        <button id="answer-submit" class="btn btn-default">Post</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
